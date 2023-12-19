@@ -119,8 +119,12 @@ const elements= [
 const containerEl = document.getElementById('icon')
 elements.forEach((element) => {
     console.log(element);
-    console.log(element.name);
-    let icons = `<i class="${element.prefix}-solid ${element.prefix}-${element.name}"></i>`
-    containerEl.innerHTML += icons
-    
+    console.log(element.name); 
+    containerEl.innerHTML += `<div class="card col-1 d-flex flex-column"> 
+    <h3>${element.name} </h3> 
+    <i class = "${element.family} ${element.prefix}solid ${element.prefix}${element.name} ${element.color}"></i> 
+    </div>`
 })
+document.getElementById('selected').addEventListener('change', function() {
+	console.log('You selected: ', this.value);
+  });
